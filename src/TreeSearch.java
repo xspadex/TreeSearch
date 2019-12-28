@@ -74,6 +74,22 @@ public class TreeSearch{
 
     }
 
+    public List<Integer> bfsByQueue(Node node){
+        Queue<Node> layer = new LinkedList<>();
+        List<Integer> res = new ArrayList<>();
+
+        layer.add(node);
+
+        while(!layer.isEmpty()){
+            Node cur = layer.poll();
+            res.add(cur.val);
+            if(cur.left!=null) layer.add(cur.left);
+            if(cur.right!=null) layer.add(cur.right);
+        }
+
+        return res;
+    }
+
     public List<Integer> dfsByRecurX(Node node){
         List<Integer> res = new ArrayList<>();
 
@@ -154,6 +170,8 @@ public class TreeSearch{
         System.out.println(solution.dfsByStackH(tree));
         System.out.println("中序栈----------");
         System.out.println(solution.dfsByStackZ(tree));
+        System.out.println("广度优先队列----------");
+        System.out.println(solution.bfsByQueue(tree));
 
 
     }
