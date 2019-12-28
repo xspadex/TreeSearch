@@ -20,7 +20,7 @@
         <entry key="$PROJECT_DIR$/TreeSearch" value="master" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/TreeSearch" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1VbLSqtojOuHCkV7kuswfN0TDFy" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -73,6 +73,7 @@
       <updated>1577516850401</updated>
       <workItem from="1577516854453" duration="94000" />
       <workItem from="1577517841386" duration="963000" />
+      <workItem from="1577518827707" duration="283000" />
     </task>
     <servers />
   </component>
