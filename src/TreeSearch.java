@@ -10,6 +10,7 @@ class Node {
 
 public class TreeSearch{
 
+    //基础遍历
     public List<Integer> dfsByStackX(Node node){
         List<Integer> res = new ArrayList<>();
         Stack<Node> stk = new Stack<>();
@@ -149,6 +150,24 @@ public class TreeSearch{
         dfsZHelper(node.right,res);
     }
 
+    //判断
+    public int depthOfTree(Node node){
+        if(node==null) return 0;
+        return Math.max(depthOfTree(node.left),depthOfTree(node.right))+1;
+    }
+
+    public Boolean isSymmetricTree(Node node){
+        return node==null?true:isSymmetricTreeHelper(node.left,node.right);
+    }
+
+    public Boolean isSymmetricTreeHelper(Node left,Node right){
+        if(left==null && right==null) return true;
+        if(left==null || right==null) return false;
+        return left.val==right.val
+                && isSymmetricTreeHelper(left.left,right.right)
+                && isSymmetricTreeHelper(left.right,right.left);
+    }
+
 
     public static void main(String[] args) {
         TreeSearch solution = new TreeSearch();
@@ -172,6 +191,10 @@ public class TreeSearch{
         System.out.println(solution.dfsByStackZ(tree));
         System.out.println("广度优先队列----------");
         System.out.println(solution.bfsByQueue(tree));
+        System.out.println("树的高度----------");
+        System.out.println(solution.depthOfTree(tree));
+        System.out.println("是否为对称树----------");
+        System.out.println(solution.isSymmetricTree(tree));
 
 
     }
